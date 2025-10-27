@@ -1,0 +1,200 @@
+/* -------------- Tela de Login (somente cabeçalho) -------------- */
+
+/* <style> */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* Fonte do texto  */
+    /* background-image: linear-gradiente(45deg, cyan, yellow); Fundo da página: 45 Graus, Ciano até Amarelo                  */
+    margin: 0;
+    padding: 0;
+}
+
+#container-cabecalho-login {
+    background-color: #064168; /* 2980B9 */
+    color: white;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    /* justify-content: space-between; Espaça o texto e a imagem */
+    align-items: center;
+    /* Alinha o texto e a imagem verticalmente */
+}
+
+.conteudo-cabecalho-login {
+    display: flex; /* Torna a área do conteúdo flexível */
+    align-items: center; /* Alinha imagem e texto verticalmente */
+    justify-content: flex-start;
+}
+
+.imagem-cabecalho-login {
+    display: flex;
+    align-items: center;
+    /* Alinha a imagem verticalmente */
+    margin-right: 10px;
+    /* Espaço entre a imagem e o texto */
+}
+
+#logo-imagem-hemopa-pa-cabecalho {
+    width: 50px;
+    /* Ajuste o tamanho da imagem */
+    height: 50px;
+}
+
+.texto-cabecalho-login {
+    display: flex;
+    align-items: center;
+    /* Alinha o texto verticalmente */
+}
+
+.container-login {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    /* Largura do contêiner */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    /* Borda */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+    border-radius: 0px;
+    /* 5px; */
+    top: 50%;
+    /* Centralizar */
+    left: 50%;
+    /* Centralizar */
+    transform: translate(-50%, -50%);
+    /* Deslocar para o real centro: (voltar no eixo x e no y) */
+    display: flex;
+    flex-direction: column;
+    /* Alinha os filhos em coluna */
+    justify-content: center;
+    /* Alinha verticalmente no centro */
+    align-items: center;
+    /* Alinha horizontalmente no centro */
+}
+
+.container-titulo-login div {
+    font-size: 1.9rem;
+    margin: 4px 0;
+    text-align: center;
+    /* Garante que o texto do título está centralizado */
+    /* font-weight: 300; Não funcionou */
+    /* color:rgb(49, 46, 46) */
+    color: #064168;
+    /* background-color: #2980B9;  */
+}
+
+.linha-abaixo-titulo {
+    width: 100%;
+    border: none;
+    background: none;
+    box-shadow: 0 0 0 0.5px #064168;
+    margin: 5px 0;
+}
+
+.container-campos-login {
+    width: 100%;
+    /* Garante que o contêiner de campos ocupe toda a largura do contêiner pai */
+}
+
+.container-campos-login label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: rgb(85, 78, 78)
+}
+
+.container-campos-login input {
+    /* width: 100% ; */
+    width: calc(100% - 21px);
+    /* Ajusta a largura para considerar o padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;    
+}
+
+.container-campos-login input:focus {
+    border: 1px solid #888;
+    /* Cor mais suave ao focar */
+    outline: none;
+    /* Remove o contorno padrão */
+}
+
+.btn {
+    background-color: #064168;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #085a92;
+}
+
+/* Estilo para a mensagem de erro */
+.mensagem-erro {
+    color: red;                     /* Cor do texto em vermelho */
+    font-size: 12px;                 /* Tamanho da fonte */
+    text-align: center;              /* Centraliza o texto */
+    margin-top: 4px;                /* Adiciona um espaçamento acima da mensagem */    
+}
+
+
+/* </style> */
+
+/* Checkbox deslizante */
+
+/* <style> */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: .4s;
+}
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #007bff;
+}
+input:checked + .slider::before {
+    transform: translateX(26px);
+}
+

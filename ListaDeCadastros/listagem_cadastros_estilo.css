@@ -1,0 +1,110 @@
+/**************************** Pagina html *****************************/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* -------------- Corpo -------------- */
+
+body {
+    padding-top: 50px;
+    /* Espaço reservado para o cabeçalho */
+    /* Ajuste o valor conforme a altura do cabeçalho */
+    padding-bottom: 45px;
+    /* Espaço reservado para o rodapé */
+    margin: 0px;
+    /* Remove qualquer margem externa */
+    height: 100%;
+    /* Garante que o conteúdo ocupe o restante da altura da tela */
+}
+
+/**************************** Outros *****************************/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/**********************************************************************************************************************************/
+
+/* -------------- Caixa de Alerta - Sucesso ou Erro -------------- */
+
+/* Mensagem centralizada abaixo do cabeçalho */
+.custom-alert {
+    position: fixed;
+    /* Sobrepõe outros elementos */
+    top: 70px;
+    /* Distância abaixo do cabeçalho */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centraliza horizontalmente */
+    z-index: 1050;
+    /* Sobrepõe todos os elementos */
+    max-width: 100%;
+    /* Tamanho máximo da mensagem */
+    padding: 20px;
+    border-radius: 8px;
+    /* Bordas arredondadas para um formato quase quadrado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    /* Alinha os itens horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente */
+    justify-content: space-between;
+    /* Espaço entre o botão e o texto */
+}
+
+/* Botão de fechar */
+.close-alert {
+    position: absolute;
+    /* Posiciona em relação ao container pai (.custom-alert) */
+    right: 5px;
+    /* Distância da borda direita */
+    top: 0px;
+    /* Distância da borda superior */
+    font-weight: bold;
+    transform: translate(30%, -30%);
+    /* Centraliza o ícone em relação à borda superior direita */
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+    /*border: 1px solid #000 !important;*/
+}
+
+/* Ajusta opacidade ao clicar fora */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/*.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    height: 30px;
+}*/
+
+/* -------------- Título da Tela -------------- */
+
+/* ----- Título do Cadastro ----- */
+.titulo-cadastro {
+    /* font-size: 1.9rem; */
+    margin: 4px 0;
+    color: #2980B9;
+    text-align: left;
+}
+
+/* ----- Linha abaixo do título ----- */
+.linha-abaixo-titulo {
+    width: 100%;
+    border: none;
+    background: none;
+    box-shadow: 0 0 0 0.5px #2980B9;
+    margin: 5px 0;
+}

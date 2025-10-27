@@ -1,0 +1,498 @@
+/* -------------- Tabela de Lista de Cadastros -------------- */
+
+/* ----- Continer da tabela ----- */
+.tabela-ListaDeCadastros-container {
+    width: 100%; /* Ocupar a largura total do contêiner pai */
+    background-color: #ffffff; /* Fundo branco para destaque */
+    border: 1px solid #ccc; /* Borda suave */
+    border-radius: 5px; /* Cantos arredondados */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/ /* Sombra leve */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra discreta */
+    /*margin: 15px 0;*/ /* Espaçamento vertical */
+    overflow: hidden; /* Evita que a barra de rolagem apareça no contêiner */
+    /*margin-bottom: 0px !important;*/ /* Espaçamento inferior */
+    /*margin-top: 10px;*/ /* Espaçamento superior */
+    /*padding: 4px;*/ /* Espaçamento interno */
+    padding-top: 0px; /* Espaçamento no topo */
+    padding-bottom: 0px !important; /* Espaçamento no fundo */
+    padding-right: 10px; /* Espaçamento à direita */
+    padding-left: 10px; /* Espaçamento à esquerda */
+    margin-bottom: 0px !important; /* Espaçamento inferior */
+    margin-top: 10px; /* Espaçamento superior */
+    /* Sem conteiner de balanço dos servidores */
+    /*height: calc(100vh - 33px - 33px - 73px);*/ /* Calcula o espaço restante */
+    /* Com conteiner de balanço dos servidores */
+    height: calc(100vh - 33px - 33px - 160px); /*166px*/ /* Calcula o espaço restante */
+    /*display: flex;*/ /* Garante o alinhamento flexível */
+    /*flex-direction: column;*/ /* Orienta o conteúdo verticalmente */
+}
+
+/* ----- Tabela -----*/
+#TabelaListaDeCadastros {
+    display: block !important; /* Permite que a tabela tenha rolagem */
+    width: 100%; /* A tabela ocupa 100% da largura do contêiner pai */
+    /* Sem conteiner de balanço dos servidores */
+    max-height: calc(100vh - 33px - 33px - 166px - 60px); /* Calcula o espaço restante */
+    /* Com conteiner de balanço dos servidores */
+
+    overflow: auto; /* Barra de rolagem automática para a tabela */
+    table-layout: fixed; /* Ajusta as colunas automaticamente para suportar a rolagem */
+    /*margin: 0;*/ /* Remove margens internas */
+    margin-top: 0px; /* Espaçamento entre o título e a tabela */
+    margin-bottom: 0px !important; /* Espaçamento inferior */
+
+    padding-top: 0px; /* Espaçamento no topo */
+    padding-bottom: 0px !important; /* Espaçamento no fundo */
+
+    border-collapse: separate !important;
+    border-spacing: 0px !important;
+    border: 0.2px solid #dee2e6 !important; /* Cor e espessura da borda */
+    border-radius: 0px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui a borda dentro das dimensões da tabela */
+
+    /* vertical-align: middle !important; Centraliza o conteúdo verticalmente */
+}
+
+/*----------Cabeçalho----------*/
+
+.tabela-ListaDeCadastros-container thead {
+    /*background-color: #6c757d;*/ /* Cor azul mais suave para o cabeçalho */
+    color: #ffffff; /* Cor do texto no cabeçalho em branco */
+    text-align: center !important; /* Alinha o texto à esquerda */
+    vertical-align: middle !important; /* Centraliza o conteúdo verticalmente */
+    font-size: 11px !important; /* Define o tamanho da fonte, ajuste conforme necessário */
+}
+
+.tabela-ListaDeCadastros-container th {
+    /*border: 1px solid #bbbbbb !important;*/ /* Borda mais destacada nas células do cabeçalho com colspan */
+    border: 1px solid #dee2e6; /* Borda mais destacada nas células do cabeçalho */
+    text-align: center !important; /* Alinha o texto à esquerda */
+}
+
+/* Bordas destacadas nas colunas mescladas do cabeçalho */
+.tabela-ListaDeCadastros-container thead th[colspan] {
+    border: 1px solid #dee2e6; /* Borda mais destacada nas células do cabeçalho com colspan */
+    /*border: 1px solid #bbbbbb !important;*/ /* Borda mais destacada nas células do cabeçalho com colspan */
+    text-align: center !important; /* Alinha o texto à esquerda */
+}
+
+/* Cor da linha 1 do cabeçalho */
+#TabelaListaDeCadastros thead tr:nth-child(1) {
+    background-color: #43484b !important;
+}
+
+/* Cor da linha 2 do cabeçalho */
+#TabelaListaDeCadastros thead tr:nth-child(2) {
+    background-color: #6c757d !important;
+}
+
+/*----------Rodapé----------*/
+.tabela-ListaDeCadastros-container tfoot {
+    /*background-color: #6c757d;*/ /* Cor azul forte para o rodapé */
+    color: #ffffff; /* Cor do texto no rodapé em branco */
+}
+
+    .tabela-ListaDeCadastros-container tfoot th,
+    .tabela-ListaDeCadastros-container tfoot td {
+        border: 1px solid #dee2e6 !important; /* Borda mais destacada nas células do rodapé */
+        /*border: 1px solid #bbbbbb !important;*/ /* Borda mais destacada nas células do cabeçalho com colspan */
+        text-align: center !important; /* Alinha o texto à esquerda */
+        vertical-align: middle !important; /* Centraliza o conteúdo verticalmente */
+        font-size: 11px !important;
+    }
+
+/* Cor da linha 1 do cabeçalho */
+#TabelaListaDeCadastros tfoot tr:nth-child(1) {
+    background-color: #6c757d !important;
+}
+
+/* Cor da linha 2 do cabeçalho */
+#TabelaListaDeCadastros tfoot tr:nth-child(2) {
+    background-color: #43484b !important;
+}
+
+/*----------Corpo----------*/
+
+/* Alinhar as células do corpo ao centro */
+.tabela-ListaDeCadastros-container tbody td {
+    text-align: center !important; /* Alinha horizontalmente o texto ao centro */
+ 
+}
+
+/* Reduz o espaçamento superior e inferior das células do cabeçalho, corpo e rodapé*/
+#TabelaListaDeCadastros thead th,
+#TabelaListaDeCadastros tbody td,
+#TabelaListaDeCadastros tfoot td {
+    padding-top: 1px !important; /* Espaçamento superior */
+    padding-bottom: 1px !important; /* Espaçamento inferior */
+
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+}
+
+/*----------Cabeçalho fixo para baixo----------*/
+
+#TabelaListaDeCadastros .table-header {
+    position: sticky !important;
+    top: 0 !important; /* Fixa o cabeçalho no topo */
+    z-index: 3 !important; /* Garante que o cabeçalho fique acima das células */
+    margin: 0px !important; /* Remove margens externas */
+    padding: 0px !important; /* Reduzir o padding de todas as células da tabela */
+    text-align: left; /* Alinha o texto ao centro */
+    border: 1px solid #dee2e6; /* Borda mais destacada nas células do rodapé */
+}
+
+/* Coluna fixa (Servidor ativo - mesclada) 8 células mescladas d*/
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {
+    position: sticky !important;
+    left: 0 !important;*/ /* Alinha com a primeira coluna fixa */
+    /*width: 230px !important;*/ /* Soma das larguras de Matrícula (80px) + Nome (150px) */
+    /*min-width: 230px !important;*/
+    /*z-index: 5 !important;*/ /* Garante que esteja acima das outras células */
+    /*background: #666E75;*/ /* Cor de fundo fixa */
+    /*color: #ffffff;*/ /* Cor do texto */
+    /*text-align: center;*/ /* Centraliza o texto */
+    /*border: 1px solid #dee2e6;*/ /* Adiciona borda para consistência */
+    /*transition: width 0.3s ease;*/ /* Suaviza a transição ao alterar a largura */
+/*}*/
+
+/*----------Cabeçalho fixo para direita----------*/
+
+/* Coluna fixa (Servidor ativo - mesclada) célula 1 mesclada*/
+#TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {
+    position: sticky !important;
+    left: 0 !important; /* Alinha com a primeira coluna fixa */
+    /*width: 230px !important;*/ /* Soma das larguras de Matrícula (80px) + Nome (150px) */
+    /*min-width: 230px !important;*/
+    z-index: 5 !important; /* Garante que esteja acima das outras células */
+    color: #ffffff; /* Cor do texto */
+    /*color: #000000 !important;*/ /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    border: 1px solid #dee2e6; /* Adiciona borda para consistência */
+    /*background: #666E75;*/ /* Cor de fundo fixa (similar do resto não fixo, mas um pouco diferente para poder sobrepor)*/
+    background-color: #43484b !important;
+}
+
+ /* #TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {
+    border-right: none; 
+} */
+
+
+/* #TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {
+    border-left: none; 
+}  */
+
+/*----------Cabeçalho e Corpo fixo para direita (com id)----------*/
+
+/*
+Coluna fixa (Ação)
+#TabelaListaDeCadastros tbody td:nth-child(1),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(1) {
+    width: 50px;
+    min-width: 50px;
+    position: sticky !important;
+    left: 0 !important; 
+}
+
+
+ Coluna fixa (# ou Id) 
+#TabelaListaDeCadastros tbody td:nth-child(2),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(2) {
+    width: 50px;
+    min-width: 50px;
+    position: sticky !important;
+    left: 50px !important; 
+}
+
+ Coluna fixa (Matrícula) 
+#TabelaListaDeCadastros tbody td:nth-child(3),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3) {
+    width: 150px;
+    min-width: 150px;
+    position: sticky !important;
+    left: 100px !important;
+}
+
+ Coluna fixa (Nome) 
+#TabelaListaDeCadastros tbody td:nth-child(4),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {
+    width: 150px;
+    min-width: 150px;
+    position: sticky !important;
+    left: 250px !important; 
+}
+
+#TabelaListaDeCadastros tbody td:nth-child(1),
+#TabelaListaDeCadastros tbody td:nth-child(2),
+#TabelaListaDeCadastros tbody td:nth-child(3),
+#TabelaListaDeCadastros tbody td:nth-child(4) {    
+    background: #fefefe; 
+    color: #000000 !important;
+}
+
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(1),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(2),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {
+    z-index: 4; 
+    background: #6c757d;     
+    color: #ffffff !important;
+}
+*/
+
+/*----------Cabeçalho e Corpo fixo para direita ----------*/
+
+/* Coluna fixa (Ação) */
+#TabelaListaDeCadastros tbody td:nth-child(1),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(1) {
+    width: 50px;
+    min-width: 50px;
+    position: sticky !important;
+    left: 0 !important; /* Primeira coluna */ /* Largura da coluna ID */
+}
+
+/* Coluna fixa (#) Id do cadastro*/
+#TabelaListaDeCadastros tbody td:nth-child(2),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(2) {
+    width: 50px;
+    min-width: 50px;
+    position: sticky !important;
+    left: 50px !important; /* Terceira coluna */ 
+}
+
+/* Coluna fixa (Matrícula) */
+#TabelaListaDeCadastros tbody td:nth-child(3),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3) {
+    width: 80px;
+    min-width: 80px;
+    position: sticky !important;
+    left: 100px !important; /* Terceira coluna */ 
+}
+
+/* Coluna fixa (Nome) */
+#TabelaListaDeCadastros tbody td:nth-child(4),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {
+    width: 100px;
+    min-width: 100px;
+    position: sticky !important;
+    left: 210px !important; /* Quarta coluna */ /* Largura das Ação, Id, Matrícula e Nome */
+}
+
+/* Coluna fixa (IdUsuarioCadastrou) */
+#TabelaListaDeCadastros tbody td:nth-child(5),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(5) {
+    width: 200px;
+    min-width: 200px;
+    position: sticky !important;
+    left: 310px !important; /* Quarta coluna */ /* Largura das Ação, Id, Matrícula e Nome */
+}
+
+
+#TabelaListaDeCadastros tbody td:nth-child(1),
+#TabelaListaDeCadastros tbody td:nth-child(2),
+#TabelaListaDeCadastros tbody td:nth-child(3),
+#TabelaListaDeCadastros tbody td:nth-child(4),
+#TabelaListaDeCadastros tbody td:nth-child(5) {
+    /*background: #FFFDF7;*/
+    /* Cor de fundo fixa (similar do resto não fixo, mas um pouco diferente para poder sobrepor)  */
+    background: #fefefe;
+    /* background: #f2f3f5; */
+    /*background: #666E75;*/
+    /* color: #ffffff !important;*/ 
+    color: #000000 !important;       
+
+    /* Não funcionou para manter a alternância de cores de linhas pelo bootstrap */
+    /* background-color: inherit !important; garantindo que as colunas fixas herdem a cor de fundo da linha à qual pertencem */
+}
+
+/* Forçando a alternância de cores para ficar igual as linhas pelo bootstrap */
+/* Sem esse código essas colunas ficariam somente de uma cor e perderiam o efeito de estriar */
+/* #TabelaListaDeCadastros tbody tr:nth-child(odd) td:nth-child(-n+5) { */
+    /* Cor de fundo das linhas ímpares */
+    /* background-color: #f2f3f5 !important;  */
+    /* Cor da linha ímpar: Pega a mesma cor da classe do bootstrap */
+    /* background-color: var(--bs-table-accent-bg) !important;  */
+    /* z-index: 10; Mantém sobreposto às outras células NÃO FUNCIONOU */
+    /* z-index: 2 !important; */
+/* } */
+
+/* #TabelaListaDeCadastros tbody tr:nth-child(even) td:nth-child(-n+5) { */
+    /* Cor de fundo das linhas pares */
+    /* background-color: #ffffff !important;  */
+    /* Cor da linha par:  Pega a mesma cor da classe do bootstrap */
+    /* background-color: var(--bs-table-bg) !important;  */
+    /* z-index: 10; Mantém sobreposto às outras células NÃO FUNCIONOU */
+    /* z-index: 2 !important; */
+/* } */
+
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(1),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(2),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(5) {   
+    /* Valor que funcionava */
+    z-index: 4;
+    background: #6c757d; /* Cor de fundo fixa (similar do resto não fixo, mas um pouco diferente para poder sobrepor)*/
+    /*color: #000000 !important;*/ /* Cor do texto */
+    color: #ffffff !important;
+}
+
+/*----------Rodapé fixo para direita----------*/
+
+#TabelaListaDeCadastros tfoot tr:nth-child(1) th:nth-child(1)
+{
+    position: sticky !important;
+    left: 0 !important; /* Alinha com a primeira coluna fixa */
+    z-index: 5 !important; /* Garante que esteja acima das outras células */
+    /*background: #666E75;*/ /* Cor de fundo fixa */
+    /*background: #6c757d !important;*/
+    color: #ffffff; /* Cor do texto */
+    /*color: #000000 !important;*/ /* Cor do texto */
+    font-weight: bold !important;
+    text-align: center; /* Centraliza o texto */
+    border: 1px solid #dee2e6; /* Adiciona borda para consistência */
+}
+
+#TabelaListaDeCadastros tfoot tr:nth-child(1) th:nth-child(1) {
+    background-color: #6c757d !important;
+}
+
+/* #TabelaListaDeCadastros tfoot tr:nth-child(1) td:nth-child(2),
+tfoot tr:nth-child(2) td:nth-child(2) {
+    position: sticky !important;
+    left: 0 !important; Alinha com a primeira coluna fixa
+    z-index: 5 !important; Garante que esteja acima das outras células
+    ----background: #666E75;---- 
+    ----background: #6c757d !important;-----
+    color: #ffffff; Cor do texto
+    ----color: #000000 !important;---- 
+    font-weight: bold !important;
+    text-align: center; 
+    border: 1px solid #dee2e6; 
+} */
+
+/* #TabelaListaDeCadastros tfoot tr:nth-child(1) td:nth-child(2) {
+    background-color: #6c757d !important;
+}
+
+#TabelaListaDeCadastros tfoot tr:nth-child(2) td:nth-child(2) {
+    background-color: #43484b !important;
+} */
+
+/*----------Cor de seleção----------*/
+
+/* Aplicar destaque às linhas ao passar o mouse */
+.tabela-ListaDeCadastros-container tbody tr:hover {
+    background-color: #fffee1 !important; /* Cor de destaque */
+}
+
+/* Garantir que as colunas fixadas também tenham a mesma cor */
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(1),
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(2),
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(3),
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(4),
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(5) {
+    background-color: #fffee1 !important; /* Cor ao passar o mouse nas colunas fixadas */
+}
+
+/*----------Espaçamento do lado direito do ícone de ordenação da célula do cabeçalho do Jquery Datatable----------*/
+
+/* Ajuste do espaçamento lateral do ícone */
+#TabelaListaDeCadastros .dt-column-order {
+    all: unset; /* Remove todos os estilos herdados */
+    margin-right: 10px !important; /* Reduz o espaço lateral direito */
+    display: inline-block !important; /* Garante que o ícone permaneça alinhado */
+    vertical-align: middle !important; /* Ajusta o alinhamento vertical, se necessário */
+    padding-right: 0px !important;    
+    /* Teste para verificar se está funcionando*/
+    /*background-color: red !important;
+    border: 1px solid blue !important;*/
+}
+
+/*----------Largura para as colunas----------*/
+
+/* Cabeçalho 1ª linha */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {}*//* Servidor ativo */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(2) {}*//* Hepatite */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(3) {}*//* Anti-HBS */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(4) {}*//* Difteria e Tetano */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(5) {}*//* Tríplice Viral */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(6) {}*//* Covid 19 */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(7) {}*//* Febre Amarela */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(8) {}*//* Influenza */
+
+/* Cabeçalho 2ª linha */
+/* #TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(1) {min-width: 50px;}Ação (já foi fixado anteriormente) */
+/* #TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(2) {min-width: 50px;}# (já foi fixado anteriormente) */
+/*#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3) {width: 120px;}*//* Matrícula (já foi fixado anteriormente) */
+/*#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {width: 200px;}*//* Nome (já foi fixado anteriormente)*/
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {min-width: 100px;}/* Cadastrado Por */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(5) {min-width: 100px;}/* DT Nascimento */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(6) {min-width: 80px;}/* Setor (o valor mínimo já está automático de acordo)*/
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(7) {min-width: 120px;}/* Cargo */
+/* Unidade */
+/* Município */
+/* Status de Vacinação */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(8) {min-width: 90px;}/* Hepatite - DT 1ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(9) {min-width: 90px;}/* Hepatite - DT 2ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(10) {min-width: 90px;}/* Hepatite - DT 3ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(11) {min-width: 95px;}/* Hepatite - DT Reforço */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(12) {min-width: 95px;}/* Anti-HBS - DT Exame */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(13) {min-width: 95px;}/* Anti-HBS - Resultado */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(14) {min-width: 90px;}/* Difteria - DT 1ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(15) {min-width: 90px;}/* Difteria - DT 2ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(16) {min-width: 90px;}/* Difteria - DT 3ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(17) {min-width: 95px;}/* Difteria - DT Reforço */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(18) {min-width: 90px;}/* Tríplice Viral - DT 1ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(19) {min-width: 90px;}/* Tríplice Viral - DT 2ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(20) {min-width: 90px;}/* Covid - DT 1ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(21) {min-width: 90px;}/* Covid - DT 2ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(22) {min-width: 90px;}/* Covid - DT 3ªDose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(23) {min-width: 100px;}/* Covid - DT 1ªReforço */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(24) {min-width: 100px;}/* Covid - DT 2ªReforço */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(25) {min-width: 103px;}/* Febre Amarela - DT Dose Única */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(26) {min-width: 103px;}/* Influenza - DT Dose Anual */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(27) {min-width: 193px;}/* Situação Vacinação */
+
+/* Aplica estilo para truncar texto com reticências */
+#TabelaListaDeCadastros td {
+    max-width: 150px; /* Define a largura máxima da célula */
+    white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
+    overflow: hidden; /* Esconde o texto que ultrapassa a largura */
+    text-overflow: ellipsis; /* Adiciona as reticências */
+    /*position: relative;*/ /* Necessário para o tooltip */ /*(Faz as colunas fixas ficarem transparentes durante a rolagem) */
+}
+
+/*.datatable-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    max-width: 300px;
+    white-space: normal;*/ /* Permite quebra de linha */
+/*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    z-index: 1000;
+}*/
+
+/* Estilo para o tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1000;
+    /*white-space: nowrap;*/ /*  Não permite quebra de linha */
+    white-space: normal; /* Permite quebra de linha */
+    max-width: 300px; /* Define o limite máximo de largura */
+    word-wrap: break-word; /* Quebra palavras longas se necessário */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: auto; /* Permite interação do mouse */
+    user-select: text; /* Permite a seleção de texto */
+}
+

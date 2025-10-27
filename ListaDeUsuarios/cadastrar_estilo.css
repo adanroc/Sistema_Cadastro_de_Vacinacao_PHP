@@ -1,0 +1,86 @@
+/**************************** Pagina html *****************************/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* -------------- Corpo -------------- */
+
+body {
+    padding-top: 50px;
+    /* Espaço reservado para o cabeçalho */
+    /* Ajuste o valor conforme a altura do cabeçalho */
+    padding-bottom: 45px;
+    /* Espaço reservado para o rodapé */
+    margin: 0px;
+    /* Remove qualquer margem externa */
+    height: 100%;
+    /* Garante que o conteúdo ocupe o restante da altura da tela */
+}
+
+/**************************** Outros *****************************/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/**********************************************************************************************************************************/
+
+
+.titulo-cadastro {
+    /* font-size: 1.9rem; */
+    margin: 4px 0;
+    text-align: left;
+    color: #2980B9;    
+}
+.linha-abaixo-titulo {
+    width: 100%;
+    border: none;
+    background: none;
+    box-shadow: 0 0 0 0.5px #2980B9;
+    margin: 5px 0;
+}
+.cadastro-servidor-container {
+    width: 100%;
+    background-color: #f0f0f0 !important;
+    border: 1px solid #ddd !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+legend {
+    color: #2980B9 !important;
+    /* Define a cor azul */
+    /* font-weight: bold; Define o texto em negrito */
+    /* font-size: 1.5em; (Opcional) Aumenta o tamanho do texto */
+    font-size: 2em;
+}
+.linha-abaixo-legend {
+    width: 100%;
+    border: none;
+    background: none;
+    box-shadow: 0 0 0 0.5px #2980B9;
+    margin: 5px 0;
+}
+
+.subtitulo-vacinas {
+    /*color: orange;
+    */font-weight: bold;
+    font-size: 1rem;
+}
+
+
+.obrigatorio {
+    color: red;
+    font-weight: bold;
+}
+.legenda_obrigatorio {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
